@@ -1,4 +1,4 @@
-require(["one", "two", "three","text!../html/partial.html", "libs/underscore"], function (one, two, three, html) {
+require(["one", "two", "three","text!../html/partial.html", "libs/underscore",'domReady!'], function (one, two, three, html) {
   // Underscore is loaded globally.
   var context = {
     people : {
@@ -8,5 +8,5 @@ require(["one", "two", "three","text!../html/partial.html", "libs/underscore"], 
       "Ajay"  : "Content Strategist"
     }
   };
-  document.body.innerHTML = _.template(html,{variable:'people'})(context.people);
+  document.getElementById('personList').innerHTML = _.template(html,{variable:'people'})(context.people);
 });
